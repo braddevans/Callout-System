@@ -13,7 +13,7 @@ project(':support-System') {
     }
 
     jar {
-        baseName 'Callout-Syatem'
+        baseName 'Staff-Support'
     }
 
 
@@ -24,8 +24,14 @@ project(':support-System') {
             }
         }
     }
+
+    task copyJar(type: Copy) {
+        from jar // here it automatically reads jar file produced from jar task
+        into 'C:/out'
+    }
+
+    build.dependsOn copyJar
 }
-//Common Project specific stuff
 project(':message-viewer') {
     apply plugin: 'java'
 
@@ -41,7 +47,7 @@ project(':message-viewer') {
     }
 
     jar {
-        baseName 'Callout-Syatem'
+        baseName 'Message-Viewer'
     }
 
 
@@ -52,4 +58,12 @@ project(':message-viewer') {
             }
         }
     }
+
+    task copyJar(type: Copy) {
+        from jar // here it automatically reads jar file produced from jar task
+        into 'C:/out'
+    }
+
+    build.dependsOn copyJar
 }
+
