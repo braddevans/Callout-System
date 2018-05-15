@@ -1,0 +1,55 @@
+project(':support-System') {
+    apply plugin: 'java'
+
+    repositories {
+        mavenCentral()
+    }
+
+    sourceCompatibility = 1.8
+    targetCompatibility = 1.8
+
+    dependencies {
+        compile fileTree(dir:'lib', include:'*.jar')
+    }
+
+    jar {
+        baseName 'Callout-Syatem'
+    }
+
+
+    sourceSets {
+        main {
+            java {
+                srcDir 'src'
+            }
+        }
+    }
+}
+//Common Project specific stuff
+project(':message-viewer') {
+    apply plugin: 'java'
+
+    repositories {
+        mavenCentral()
+    }
+
+    sourceCompatibility = 1.8
+    targetCompatibility = 1.8
+
+    dependencies {
+        compile fileTree(dir:'lib', include:'*.jar')
+    }
+
+    jar {
+        baseName 'Callout-Syatem'
+    }
+
+
+    sourceSets {
+        main {
+            java {
+                srcDir 'src'
+            }
+        }
+    }
+}
